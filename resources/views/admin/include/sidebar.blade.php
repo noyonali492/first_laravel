@@ -30,13 +30,27 @@
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
             aria-expanded="true" aria-controls="collapseTwo">
             <i class="fas fa-fw fa-cog"></i>
-            <span>Categories</span>
+            <span>Categories Info</span>
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Categories Components:</h6>
                 <a class="collapse-item" href="{{ url('/add_category')}}">Add Category</a>
                 <a class="collapse-item" href="{{url('/manage-category')}}">Manage Category</a>
+            </div>
+        </div>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseThree"
+            aria-expanded="true" aria-controls="collapseThree">
+            <i class="fas fa-fw fa-cog"></i>
+            <span>Products Info</span>
+        </a>
+        <div id="collapseThree" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Products Components:</h6>
+                <a class="collapse-item" href="{{ url('/add_product')}}">Add Product</a>
+                <a class="collapse-item" href="{{url('/manage-product')}}">Manage Product</a>
             </div>
         </div>
     </li>
