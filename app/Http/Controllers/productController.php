@@ -18,7 +18,19 @@ class productController extends Controller
         $name = $productPic->getClientOriginalName();
         $uploadPah = 'productPic/';
         $productPic->move($uploadPah,$name);
+        $imageUrl = $uploadPah.$name;
+        //echo $imageUrl;
 
+        $product = new Product();
+
+        $product->productName = $request->productName;
+        $product->categoryId = $request->productCategory;
+        $product->productPrice = $request->productPrice;
+        $product->productQuantity = $request->productQuantity;
+        $product->productDescription = $request->productDescription;
+        $product->productPicture = $imageUrl;
+        $product->publicationStatus = $request->publicationStatus;
+        $product->save();
 
 
        //dd($productPic);
