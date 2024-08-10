@@ -4,7 +4,7 @@
 <hr>
 {{ Session::get('msg') }}
 <hr>
-    {!! Form::open(['url'=>'/save-product','method'=>'post','class'=>'form-horizontal']) !!}
+    {!! Form::open(['url'=>'/save-product','method'=>'post','class'=>'form-horizontal','enctype'=>'multipart/form-data']) !!}
     @csrf
         <div class="form-group">
           <label class="control-label col-sm-2" for="productName">Product Name:</label>
@@ -17,8 +17,9 @@
             <div class="col-sm-10">
               <select class="form-control" id="productCategory" name="productCategory">
                 <option>product Category</option>
-                <option value="1">Published</option>
-                <option value="0">Unpublished</option>
+                @foreach ($categories as $Category)
+                <option value="{{$Category->id}}">{{$Category->categoryName}}</option>
+                @endforeach
               </select>
             </div>
           </div>
@@ -37,7 +38,7 @@
           <div class="form-group">
             <label class="control-label col-sm-2" for="productPicture">Product Picture:</label>
             <div class="col-sm-10">
-              <input type="file" class="form-control" id="productPicture" placeholder=" product Picture" name="productPicture"></input>
+              <input type="file" class="form-control" name="productPicture"></input>
             </div>
           </div>
         <div class="form-group">

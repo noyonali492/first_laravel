@@ -33,4 +33,6 @@ Route::post('/save-category', 'categoryController@saveCategory');
 Route::get('manage-category','categoryController@manageCategory');
 Route::get('/edit-category/{edit_id}','categoryController@editCcategory');
 Route::post('/update-category','categoryController@updateCategory');
+
 Route::get('/add_product', 'productController@add');
+Route::post('/save-product', 'productController@saveProduct');
